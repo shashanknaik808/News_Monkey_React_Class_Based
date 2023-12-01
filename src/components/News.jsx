@@ -6,8 +6,13 @@ export class News extends Component {
     constructor() {
         super();
         this.state = {
-            articles: []
+            articles: [],
+            page: 1,
+            loading: true,
+            totalArticles: 0
         }
+        this.handleNextClick = this.handleNextClick.bind(this);
+        this.handlePreviousClick = this.handlePreviousClick.bind(this);
     }
 
     componentDidMount() {
