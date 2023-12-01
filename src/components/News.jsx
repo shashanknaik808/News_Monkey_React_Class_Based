@@ -30,6 +30,16 @@ export class News extends Component {
             });
     }
 
+    async handleNextClick() {
+        if (this.state.page + 1 > Math.ceil(this.state.totalArticles / 10)) {
+            console.log("No more Articles");
+        } else {
+            let res = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-10-14&sortBy=publishedAt&apiKey=bd002a1cf4f64969a8819fcbfe3a190f&page=${this.state.page + 1}&pageSize=10`);
+            let data = await res.json();
+            console.log(data.articles);
+        }
+    }
+
     render() {
 
         console.log(this.state.articles);
