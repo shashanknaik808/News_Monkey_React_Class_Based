@@ -21,7 +21,12 @@ export class News extends Component {
         )
             .then(res => res.json())
             .then(data => {
-                this.setState({ articles: data.articles });
+                this.setState({
+                    ...this.state,
+                    articles: data.articles,
+                    totalArticles: data.totalResults,
+                    loading: false
+                });
             });
     }
 
