@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 
 export class NewsItem extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            articles: []
-        }
-    }
-
-    componentDidMount() {
-        fetch(
-            "https://newsapi.org/v2/top-headlines?country=us&apiKey=8788032716674e868d61331f7e5304c6"
-        ).then(res => res.json()).then(data => {
-            this.setState({ articles: data.articles });
-        });
-    }
-
     render() {
 
         const { title, description, imageUrl } = this.props;
