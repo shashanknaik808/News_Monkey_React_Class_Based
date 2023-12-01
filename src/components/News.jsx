@@ -48,6 +48,11 @@ export class News extends Component {
         }
     }
 
+    async handlePreviousClick() {
+        let res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=8788032716674e868d61331f7e5304c6&page=${this.state.page - 1}&pageSize=10`);
+        let data = await res.json();
+    }
+
     render() {
 
         console.log(this.state.articles);
