@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class NewsItem extends Component {
+export class NewsItem extends Component {git 
     render() {
 
         const { title, description, imageUrl } = this.props;
