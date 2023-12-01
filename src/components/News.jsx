@@ -21,6 +21,9 @@ export class News extends Component {
     }
 
     render() {
+
+        console.log(this.state.articles);
+
         return (
             <>
                 <div className='container my-3'>
