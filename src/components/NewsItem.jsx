@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 export class NewsItem extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            articles: []
+        }
+    }
+
     render() {
 
         const { title, description, imageUrl } = this.props;
