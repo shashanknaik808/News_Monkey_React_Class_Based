@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export class App extends Component {
   render() {
-
+    let apiKey = process.env.REACT_APP_NEWS_API;
     let vCon = 'in';
     let vSiz = 10;
 
