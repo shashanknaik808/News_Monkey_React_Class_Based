@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewsItem from './NewsItem';
+import Spinner from './Spinner';
 
 export class News extends Component {
 
@@ -66,7 +67,8 @@ export class News extends Component {
         return (
             <>
                 <div className='container my-3'>
-                    <h2>NewsMonkey - Top Headlines</h2>
+                    <h2 className='text-center' >NewsMonkey - Top Headlines</h2>
+                    {this.state.loading && <Spinner />}
                     {(this.state.loading !== true) &&
                         <div className='row'>
                             {(this.state.articles.map((item, index) => {
