@@ -29,8 +29,6 @@ export class News extends Component {
             loading: true,
             totalArticles: 0
         }
-        this.handleNextClick = this.handleNextClick.bind(this);
-        this.handlePreviousClick = this.handlePreviousClick.bind(this);
 
         document.title = `${this.capitalizeFirstLetter(this.props.category)} : News Monkey`
     }
