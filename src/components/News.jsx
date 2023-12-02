@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NewsItem from './NewsItem';
 import Spinner from './Spinner';
+import PropTypes from 'prop-types';
 
 export class News extends Component {
 
@@ -30,7 +31,7 @@ export class News extends Component {
 
     componentDidMount() {
         fetch(
-            "https://newsapi.org/v2/top-headlines?country=us&apiKey=8788032716674e868d61331f7e5304c6"
+            "https://newsapi.org/v2/top-headlines?country=in&apiKey=8788032716674e868d61331f7e5304c6"
         )
             .then(res => res.json())
             .then(data => {
@@ -49,7 +50,7 @@ export class News extends Component {
         }
         else {
             this.setState({ ...this.state, loading: true });
-            let res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=8788032716674e868d61331f7e5304c6&page=${this.state.page + 1}&pageSize=10`);
+            let res = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8788032716674e868d61331f7e5304c6&page=${this.state.page + 1}&pageSize=10`);
             let data = await res.json();
             console.log(data.articles);
             this.setState({
@@ -64,7 +65,7 @@ export class News extends Component {
 
     async handlePreviousClick() {
         this.setState({ ...this.state, loading: true });
-        let res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=8788032716674e868d61331f7e5304c6&page=${this.state.page + 1}&pageSize=10`);
+        let res = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8788032716674e868d61331f7e5304c6&page=${this.state.page + 1}&pageSize=10`);
         let data = await res.json();
         this.setState({
             ...this.state,
