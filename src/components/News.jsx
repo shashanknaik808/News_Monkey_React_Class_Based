@@ -86,18 +86,23 @@ export class News extends Component {
                     <h2 className='text-center' >NewsMonkey - Top Headlines</h2>
                     {this.state.loading && <Spinner />}
                     {(this.state.loading !== true) &&
-                        <div className='row'>
-                            {(this.state.articles.map((item, index) => {
-                                return (
-                                    <div className='col-md-4' key={index}>
-                                        <NewsItem
-                                            title={item.title}
-                                            description={item.description}
-                                            imageUrl={item.urlToImage}
-                                        />
-                                    </div>
-                                )
-                            }))
+                        <div className="row">
+                            {
+                                this.state.articles.map((item, index) => {
+                                    return (
+                                        <div className="col-md-4" key={index}>
+                                            <NewsItem
+                                                title={item.title.slice(0, 45)}
+                                                decription={(item.description) ? item.description.slice(0, 88) : "Click for more Details"}
+                                                imageUrl={(item.urlToImage != null) ? item.urlToImage : "https://theleaflet.in/wp-content/uploads/2021/09/IT-Dept.jpg"}
+                                                newsURL={item.url}
+                                                author={item.author}
+                                                date={item.publishedAt}
+                                                source={item.source.name}
+                                            />
+                                        </div>
+                                    )
+                                })
                             }
                         </div>
                     }
