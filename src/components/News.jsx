@@ -48,7 +48,7 @@ export class News extends Component {
         this.updateNews(1);
     }
 
-    async handleNextClick() {
+    fetchMoreData = async () => {
         if (this.state.page + 1 > Math.ceil(this.state.totalArticles / 10)) {
             console.log("No more Articles");
         }
