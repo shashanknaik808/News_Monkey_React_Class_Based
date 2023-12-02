@@ -67,7 +67,7 @@ export class News extends Component {
             <>
                 <div className='container my-3'>
                     <h2>NewsMonkey - Top Headlines</h2>
-                    {(this.state.articles.length != 0) &&
+                    {(this.state.loading !== true) &&
                         <div className='row'>
                             {(this.state.articles.map((item, index) => {
                                 return (
